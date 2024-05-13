@@ -16,6 +16,38 @@ Scaling workloads in Kubernetes refers to the ability to adjust the number of in
 
 ![alt text](image.png)
 
+## Create NGINX deployment
+
+```bash
+vim nginx-deployment.yaml
+```
+
+```YAML
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+```
+
+```bash
+kubectl apply -f nginx-deployment.yaml
+```
+
+![alt text](deploy.png)
+
 ## Create Horizontal Pod Autoscalers
 
 We can create an HPA for an existing Deployment by using the `autoscale deployment` command that creates an HPA for the nginx Deployment, with a minimum of 3 replicas and a maximum of 10 replicas, and a target
