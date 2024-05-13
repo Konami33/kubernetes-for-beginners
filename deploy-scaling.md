@@ -28,7 +28,7 @@ kind: Deployment
 metadata:
   name: nginx
 spec:
-  replicas: 2
+  replicas: 5
   selector:
     matchLabels:
       app: nginx
@@ -100,7 +100,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:1.17.0
+        image: nginx
         resources:
           requests:
             memory: "64Mi"  # Request 64 megabytes of memory
@@ -150,4 +150,4 @@ kubectl apply -f nginx-hpa.yaml
 
 ![alt](gethpa2.png)
 
-here we can see the CPU usage which is `<unknown>` before defining the resouce requirements of the pod definition.
+Here, we can see the CPU usage which is `<unknown>` before defining the resource requirements of the pod definition.
