@@ -1,7 +1,9 @@
-In this lab, We will try to do two task:
-1. Create a deployment named nginx that uses the latast nginx image with 5 replicas to begin with
+# Autoscaling a Deployment
+In this lab, we will attempt two tasks:
 
-2. Create a Horizontal Pod Autoscaler for the deployment with an average utilization of CPU to 65% and an average utilization of memory to 1Gi. Set the minimum number of replicas to 3 and the maximum number of replicas to 10.
+1. Create a deployment named 'nginx' that utilizes the latest nginx image with 5 replicas to start.
+
+2. Establish a Horizontal Pod Autoscaler for the deployment, aiming for an average CPU utilization of 65% and an average memory utilization of 1Gi. Set the minimum number of replicas to 3 and the maximum number of replicas to 10.
 
 **Before going to the implementation we will try to understand what is Scalibilty in kubernetes.**
 
@@ -36,7 +38,7 @@ Listing all the HPA objects transparently describes their current state.
 
 ![alt text](/gethpa.png)
 
-If the Pod template of the Deployment does not define CPU resource requirements or if the CPU metrics cannot be retrieved from the metrics server, the left value of the column “TARGETS” says <unknown>. We can solve this by defining CPU resource requirements to the Pod template
+If the Pod template of the Deployment does not define CPU resource requirements or if the CPU metrics cannot be retrieved from the metrics server, the left value of the column “TARGETS” says `<unknown>`. We can solve this by defining CPU resource requirements to the Pod template
 1. Delete the nginx deployment
 
 ```bash
@@ -116,4 +118,4 @@ kubectl apply -f nginx-hpa.yaml
 
 ![alt](gethpa2.png)
 
-here we can see the CPU usage which is <unknown> before defining the resouce requirements of the pod definition.
+here we can see the CPU usage which is `<unknown>` before defining the resouce requirements of the pod definition.
