@@ -96,10 +96,10 @@ To decode the hashed secret we can use the same command with an addition of --de
 echo –n 'bXlzcWw=' | base64 --decode
 ```
 ```bash
-echo –n 'root=' | base64 --decode
+echo –n 'cm9vdA==' | base64 --decode
 ```
 ```bash
-echo –n 'paswrd=' | base64 --decode
+echo –n 'cGFzd3Jk' | base64 --decode
 ```
 
 So, in this lab we have created a secret in both ways, encoded the values, display the information of the secret file and also decoded the hashed values.
