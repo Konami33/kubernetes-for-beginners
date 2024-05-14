@@ -8,15 +8,13 @@ In this lab, we will attempt two tasks:
 **Before going to the implementation we will try to understand what is Scalibilty in kubernetes.**
 
 **Scalability** is the ability of a system to handle increasing load.
-Scaling workloads in Kubernetes refers to the ability to adjust the number of instances (replicas) of a workload dynamically based on demand or predefined metrics. Kubernetes provides several mechanisms for scaling workloads, including:
+Scaling workloads in Kubernetes refers to the ability to adjust the number of instances (replicas) of a workload dynamically based on demand or predefined metrics.
 
-1. **Manual scaling:** You can manually scale a workload by updating the number of replicas in the deployment, replica set, or stateful set manifest. This approach is suitable for scenarios where you have predictable traffic patterns or when you want to scale based on external factors that cannot be automated.
-
-2. **Horizontal Pod Autoscaler (HPA):** The Horizontal Pod Autoscaler automatically scales the number of pods in a deployment, replica set, or stateful set based on observed CPU utilization or custom metrics. It continuously adjusts the number of replicas to maintain a target utilization level specified in the HPA configuration.
+**Horizontal Pod Autoscaler (HPA):** The Horizontal Pod Autoscaler automatically scales the number of pods in a deployment, replica set, or stateful set based on observed CPU utilization or custom metrics. It continuously adjusts the number of replicas to maintain a target utilization level specified in the HPA configuration.
 
 ![alt text](./images/scale.png)
 
-## Create NGINX deployment
+## Create a NGINX deployment
 
 ```bash
 vim nginx-deployment.yaml
